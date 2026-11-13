@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tiny-fps</title>
+    <style>:root{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark;--bg:#0b1016;--fg:#e9eef3;--muted:#8d9aa7;--card:#121a23;--field:#18222c;--line:#26323e;--accent:#f7782a;--hot:#ffb347}*{box-sizing:border-box}body{background:radial-gradient(1200px 600px at 50% -200px, #2a1a12 0%, #0000 70%), radial-gradient(900px 500px at 100% 100%, #0f2233 0%, #0000 70%), var(--bg);min-height:100vh;color:var(--fg);margin:0;font:16px/1.5 system-ui,sans-serif}main{gap:28px;max-width:920px;margin:0 auto;padding:40px 16px 48px;display:grid}header{text-align:center;justify-items:center;gap:6px;display:grid}h1{letter-spacing:.04em;background:linear-gradient(#fe6,#f92 45%,#d21);color:#0000;filter:drop-shadow(0 0 24px #f9620055);-webkit-background-clip:text;background-clip:text;margin:0;font:900 clamp(44px,11vw,88px)/1 system-ui,sans-serif;transform:skew(-8deg)}header p{color:var(--muted);max-width:560px;margin:0}h2{letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-size:12px;font-weight:800}form{gap:28px;display:grid}fieldset{border:0;min-width:0;margin:0;padding:0}.mode{border:1px solid var(--accent);background:linear-gradient(90deg, #f7782a1f, #0000 60%), var(--card);border-radius:14px;grid-template-columns:auto 1fr;align-items:center;gap:4px 16px;padding:16px 18px;display:grid;box-shadow:inset 0 0 0 1px #f7782a33}.mode b{width:56px;height:56px;color:var(--hot);letter-spacing:.06em;background:#f7782a26;border-radius:12px;grid-row:span 2;place-items:center;font:900 18px/1 system-ui,sans-serif;display:grid}.mode strong{font-size:18px}.mode span{color:var(--muted);font-size:15px}.soon{color:var(--muted);margin:8px 2px 0;font-size:13px}.maps{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;display:grid}.map{border:1px solid var(--line);background:var(--card);cursor:pointer;border-radius:14px;transition:transform .15s,border-color .15s,box-shadow .15s;display:grid;position:relative;overflow:hidden}.map:hover{border-color:#3a4a5a;transform:translateY(-2px)}.map input{opacity:0;pointer-events:none;position:absolute}.map:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent), 0 10px 40px -12px #f7782a88}.map:has(input:focus-visible){outline:2px solid var(--hot);outline-offset:3px}.map img{aspect-ratio:16/9;object-fit:cover;filter:saturate(.9)brightness(.85);width:100%;transition:filter .15s;display:block}.map:hover img{filter:none}.map:has(input:checked) img{filter:none}.map div{gap:4px;padding:14px 16px 16px;display:grid}.map strong{letter-spacing:.02em;font-size:20px;font-weight:800}.map em{letter-spacing:.08em;text-transform:uppercase;color:var(--hot);font-size:12px;font-style:normal;font-weight:700}.map p{color:var(--muted);margin:2px 0 0;font-size:14px}.map i{background:var(--accent);color:#fff;border-radius:50%;place-items:center;width:26px;height:26px;font:900 15px/1 system-ui,sans-serif;display:none;position:absolute;top:10px;right:10px}.map:has(input:checked) i{display:grid}.play{flex-wrap:wrap;align-items:end;gap:12px;display:flex}label.field{color:var(--muted);flex:200px;gap:4px;font-size:13px;display:grid}input,select,button{font:inherit;border:1px solid var(--line);background:var(--field);min-height:44px;color:var(--fg);border-radius:10px;min-width:0;padding:6px 12px}input:focus,select:focus{outline-offset:1px;outline:2px solid #f7782a88}#join{color:#fff;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;background:linear-gradient(#ff9a4a,#e8590c);border:0;flex:none;padding:6px 32px;font-weight:800;box-shadow:0 8px 24px -8px #e8590caa}#join:hover{filter:brightness(1.08)}.keys{color:var(--muted);text-align:center;margin:0;font-size:13px}[hidden]{display:none!important}#game{position:fixed;inset:0}#bar{text-shadow:0 1px 2px #000;align-items:center;gap:12px;font-size:14px;display:flex;position:fixed;top:8px;left:12px}@media (max-width:640px){main{padding-top:28px}#bar{top:auto;bottom:32px}#join{flex:100%}}#bar button{background:#0008;border-color:#fff4;min-height:32px;padding:2px 14px}</style>
+    <script type="module" crossorigin src="/tiny-fps/assets/index-QhF4NnKA.js"></script>
+  </head>
+  <body>
+    <main id="menu">
+      <header>
+        <h1>TINY FPS</h1>
+        <p>
+          A tiny multiplayer parkour shooter in the browser. Open this page in another tab to join
+          the other team.
+        </p>
+      </header>
+      <form id="form">
+        <section>
+          <h2>Game mode</h2>
+          <div class="mode">
+            <b>CTF</b>
+            <strong>Capture the flag</strong>
+            <span
+              >Two teams, two flags. Take the enemy flag from its base and run it home while your
+              own flag is there. First team to 3 captures wins, or the one ahead after 8
+              minutes.</span
+            >
+          </div>
+          <p class="soon">More modes are coming.</p>
+        </section>
+        <fieldset>
+          <h2>Map</h2>
+          <div class="maps">
+            <label class="map">
+              <input type="radio" name="map" value="highline" checked />
+              <img
+                src="/tiny-fps/assets/highline-B5U9pnC4.jpg"
+                alt="The red tower's roof on Highline, the city in the haze"
+              />
+              <i>✓</i>
+              <div>
+                <em></em>
+                <strong></strong>
+                <p></p>
+              </div>
+            </label>
+            <label class="map">
+              <input type="radio" name="map" value="tranquility" />
+              <img
+                src="/tiny-fps/assets/tranquility-B2FTunqB.jpg"
+                alt="A combat ship on its pad by the red dome of Tranquility, mountains on the crater's horizon, the Earth in a black sky"
+              />
+              <i>✓</i>
+              <div>
+                <em></em>
+                <strong></strong>
+                <p></p>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+        <div class="play">
+          <label class="field"
+            >Name <input name="name" maxlength="16" required autocomplete="nickname"
+          /></label>
+          <label class="field"
+            >Character
+            <select name="body">
+              <option value="0">Kai</option>
+              <option value="1">Nova</option>
+            </select>
+          </label>
+          <label class="field"
+            >Connection
+            <select name="mode">
+              <option value="local">Local (tabs of this browser)</option>
+              <option value="server">Server</option>
+            </select>
+          </label>
+          <label class="field" id="url" hidden
+            >Server URL <input name="url" type="url" value="ws://localhost:8787/demo"
+          /></label>
+          <button id="join">Play</button>
+        </div>
+        <p class="keys">
+          Mouse to look · WASD (ZQSD) to move · Shift sprint · Space jump, twice in the air · a
+          direction twice to dash · C crouch or slide · E rover · Esc for every key
+        </p>
+      </form>
+    </main>
+    <div id="game" hidden></div>
+    <div id="bar" hidden>
+      <span id="status"></span>
+      <button id="leave" type="button">Leave</button>
+    </div>
+  </body>
+</html>
